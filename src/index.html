@@ -17,17 +17,19 @@
 </head>
 
 <body>
-
   <div class="container">
-
     <form class="form">
       <label class="label-form" for="image-inp"></label>
       <input class="input-form" type="text" name="image" id="image-inp" placeholder="Name image" required />
       <button class="btn-submit" type="submit">Search</button>
     </form>
-
     <ul class="gallery"></ul>
+  </div>
 
+  <div>
+    <button type="button" class="btn btn-primary button btn-load-more hidden" data-action="load-more">
+      <span class="label">Load more</span>
+    </button>
   </div>
 
   <script type="module" src="./main.js"></script>

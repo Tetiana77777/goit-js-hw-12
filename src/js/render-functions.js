@@ -5,9 +5,10 @@ export function imageTemplate(images) {
         `<li class="gallery-item">
            <a class="gallery-link" href="${image.largeImageURL}">
              <img
+               loading="lazy"
                class="gallery-image"
-               width="1280"
-               height="152"
+              //  width="1280"
+              //  height="152"
                src="${image.webformatURL}"
                data-source="${image.largeImageURL}"
                alt="${image.tags}"
