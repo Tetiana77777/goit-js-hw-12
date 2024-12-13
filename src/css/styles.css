@@ -6,44 +6,19 @@
 */
 @import url('./reset.css');
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.search-form {
+  width: 371px;
+  margin: 16px auto;
 }
 
-.container {
-  max-width: 1160px;
-  padding: 0 16px;
-  margin: auto;
-}
-.form {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 24px;
-  margin-bottom: 34px;
-  text-align: center;
-}
-
-.input-form {
-  border-radius: 4px;
-  border-width: 1px;
+.form-input {
+  display: inline-block;
   width: 272px;
-  height: 40px;
-  padding: 8px;
-  margin-right: 8px;
-}
-.input-form::placeholder {
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 4px;
+  padding: 8px 16px;
+  outline: 0px solid transparent;
+  transition: border liner 250ms;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -51,83 +26,104 @@
   letter-spacing: 0.04em;
   color: #808080;
 }
-.input-form:placeholder-shown {
-  outline: none;
+
+.form-input:hover {
+  border: 1px solid rgb(0, 0, 0);
 }
-.btn-submit {
-  border-radius: 8px;
-  padding: 8px 16px;
-  min-width: 91px;
-  height: 40px;
-  background: #4e75ff;
-  border: none;
+
+.form-input:focus-within {
+  border: 1px solid rgb(78, 117, 255);
+}
+
+.btn {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: 0px solid transparent;
   color: #fff;
-}
-.gallery {
-  display: flex;
-  gap: 24px;
-  width: 1128px;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: #4e75ff;
+  transition: background-color linear 250ms;
 }
 
-.gallery-item {
+.btn:hover {
+  background-color: #6c8cff;
+}
+
+.load-more-btn {
+  margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.gallary {
+  width: 1128px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.gallary-item {
   width: calc((100% - 48px) / 3);
+  border: 1px solid #808080;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-img {
-  display: block;
+.gallary-image {
   width: 100%;
-  height: 100%;
+  height: 152px;
+  object-fit: cover;
+  object-position: center;
 }
-.gallery-description {
+
+.info-list {
   display: flex;
-  padding: 4px;
-  justify-content: space-evenly;
+  padding: 4px 20px;
+  gap: 28px;
 }
-.gallery-description > li {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+
+.info-list-item {
+  width: calc((100% - 84px) / 4);
 }
-.gallery-description h3 {
+
+.list-item-title {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 12px;
-  line-height: 133%;
+  line-height: 1.33333;
   letter-spacing: 0.04em;
   color: #2e2f42;
-}
-.gallery-description p {
   text-align: center;
+}
+
+.list-item-info {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 12px;
-  line-height: 200%;
+  line-height: 2;
   letter-spacing: 0.04em;
   color: #2e2f42;
-}
-.gallery-image {
-  height: 152px;
+  text-align: center;
 }
 
 .loader {
+  margin: 0 auto;
   width: 48px;
   height: 48px;
-  border: 5px solid #fff;
-  border-bottom-color: #ff3d00;
+  border: 5px solid;
+  border-color: #ff3d00 transparent;
   border-radius: 50%;
-  display: inline-block;
+  display: block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  margin: 0 auto;
 }
 
 @keyframes rotation {
@@ -139,27 +135,21 @@ img {
   }
 }
 
-.hidden {
-  display: none;
-  opacity: 0;
+.scroll-top {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4e75ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  fill: #fff;
+  transition: background-color linear 250ms;
 }
-
-.rectangle {
-  height: 100px;
-  width: 100px;
-  background-color: black;
+.scroll-top:hover {
+  background-color: #6c8cff;
 }
-
-.button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* .button.is-hidden {
-  display: none;
-} */
-
-/* .button > .spinner.is-hidden {
-  display: none;
-} */
